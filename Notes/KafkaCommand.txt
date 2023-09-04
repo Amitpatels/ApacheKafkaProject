@@ -1,0 +1,22 @@
+Step1: 
+Zookeeper start: 
+C:\ProgamSoft\kafka_2.13-3.5.0>bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+Step2: 
+Kafka Server start: 
+C:\ProgamSoft\kafka_2.13-3.5.0>bin\windows\kafka-server-start.bat config\server.properties
+
+Step3:
+Create Kafka Topics:
+C:\ProgamSoft\kafka_2.13-3.5.0>bin\windows\kafka-topics.bat --create --topic user-topic --bootstrap-server localhost:9092
+
+
+Step4:
+Produce:
+C:\ProgamSoft\kafka_2.13-3.5.0>bin\windows\kafka-console-producer.bat --topic user-topic --bootstrap-server localhost:9092  
+
+
+Consumer : 
+C:\ProgamSoft\kafka_2.13-3.5.0>bin\windows\kafka-console-consumer.bat --topic user-topic --from-beginning --bootstrap-server localhost:9092
+
+C:\ProgamSoft\kafka_2.13-3.5.0>bin\windows\kafka-console-consumer.bat --topic location-update-topic --from-beginning --bootstrap-server localhost:9092
